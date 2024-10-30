@@ -1,0 +1,26 @@
+<nav fxLayout="row" fxLayoutAlign="space-between center" class="navbar">
+  <div class="brand">Exclusive</div>
+
+  <div fxLayout="row" fxLayoutGap="20px" class="nav-links">
+    <a href="javascript:void(0)" routerLink="/home">Home</a>
+    <a href="javascript:void(0)" routerLink="/home">Contact</a>
+    <a href="javascript:void(0)" routerLink="/home">About</a>
+    <a [routerLink]="['/home/auth/signup']">Sign Up</a>
+  </div>
+
+  <div
+    fxLayout="row"
+    fxLayoutAlign="center center"
+    fxLayoutGap="15px"
+    class="actions"
+  >
+    <div class="search-bar">
+      <input type="text" placeholder="What are you looking for?" />
+      <button>
+        <i class="material-icons">search</i>
+      </button>
+    </div>
+    <i class="material-icons">favorite_border</i>
+    <i class="material-icons">account_circle</i>
+  </div>
+</nav>

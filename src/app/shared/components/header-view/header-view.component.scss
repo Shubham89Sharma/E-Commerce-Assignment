@@ -1,0 +1,59 @@
+.navbar {
+  padding: 10px 20px;
+  border-bottom: 1px solid #e0e0e0;
+
+  .brand {
+    font-weight: bold;
+    font-size: 1.5em;
+  }
+
+  .nav-links {
+    a {
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      background-color: #f0f0f0;
+      padding: 5px 10px;
+      border-radius: 5px;
+
+      input {
+        border: none;
+        background: transparent;
+        outline: none;
+        width: 180px;
+        padding: 5px;
+      }
+
+      button {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        outline: none;
+
+        i {
+          color: gray;
+        }
+      }
+    }
+
+    i {
+      font-size: 1.5em;
+      color: black;
+      cursor: pointer;
+    }
+  }
+}

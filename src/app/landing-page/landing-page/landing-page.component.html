@@ -1,0 +1,45 @@
+<div class="categories">
+  <p class="title"><span class="box red"></span>Categories</p>
+  <h2>Browse By Category</h2>
+  <div class="category-list">
+    <div class="carousel-container">
+      <carousel
+        [itemsPerSlide]="itemsPerSlide"
+        [singleSlideOffset]="singleSlideOffset"
+        [interval]="0"
+        [noWrap]="noWrap"
+      >
+        <slide *ngFor="let category of categoriesList">
+          <img
+            [src]="category.image"
+            (error)="setDefaultPic($event)"
+            [alt]="category.name"
+            class="carousel-image"
+          />
+          <div class="carousel-caption">
+            <h5>{{ category.name }}</h5>
+          </div>
+        </slide>
+      </carousel>
+    </div>
+  </div>
+</div>
+
+<div class="products-container">
+  <p class="title"><span class="box red"></span>Our Products</p>
+  <h2>Explore Our Products</h2>
+  <div class="products-grid" fxLayout="row" fxLayoutGap="5px">
+    <div class="product-card" *ngFor="let product of productsList" fxFlex="25">
+      <img
+        [src]="product.images[0]"
+        (error)="setDefaultPic($event)"
+        alt="{{ product.title }}"
+      />
+      <h3>{{ product.title }}</h3>
+      <p class="price">{{ product.price | currency : "$" }}</p>
+    </div>
+  </div>
+  <button class="view-all-button" [routerLink]="['/home/products']">
+    View All Products
+  </button>
+</div>

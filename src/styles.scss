@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+table tr td {
+  font-size: 0.9vw !important;
+  font-weight: 400;
+  word-break: break-all;
+}
+table thead th {
+  font-weight: 600;
+  font-size: 13px;
+}
+.ex1 {
+  width: 100% !important;
+  overflow-x: scroll;
+  scrollbar-width: auto;
+  min-height: 85px !important;
+}
+.request_table .mat-table {
+  width: 100%;
+}
+
+.request_table .mat-table thead {
+  vertical-align: middle;
+  border-color: inherit;
+  background: #ebedf2;
+  color: #fff;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  font-size: 13px;
+}
+
+.request_table .mat-table thead tr th {
+  vertical-align: inherit;
+  width: 175px;
+  min-width: 200px;
+  word-break: break-word;
+  padding: 0 1%;
+  color: #2f235a;
+  font-size: 1vw;
+  text-align: left;
+}
+.request_table .mat-table tr td {
+  vertical-align: inherit;
+  width: 232px;
+  min-width: 181px;
+  word-break: break-word;
+  padding: 0 1%;
+  text-align: left;
+}
+tr.mat-header-row {
+  height: 5vh !important;
+}

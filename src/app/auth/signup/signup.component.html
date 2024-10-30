@@ -1,0 +1,38 @@
+<div class="signup-container">
+  <div class="image-section">
+    <img
+      src="../../../assets/img/E_commerce_logo.jpg"
+      alt="Shopping cart with mobile and bags"
+    />
+  </div>
+  <div class="form-section">
+    <h2>Create an account</h2>
+    <p>Enter your details below</p>
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <input type="text" placeholder="Name" formControlName="name" />
+      </div>
+      <div class="form-group">
+        <input type="text" placeholder="Email" formControlName="email" />
+      </div>
+      <div class="form-group">
+        <input
+          type="password"
+          placeholder="Password"
+          formControlName="password"
+        />
+      </div>
+      <button type="submit" class="create-account-button">
+        Create Account
+      </button>
+      <button type="button" class="google-signin-button">
+        <img src="../../../assets/img/Google_logo.png" alt="Google Icon" /> Sign
+        up with Google
+      </button>
+      <p>
+        Already have an account?
+        <a [routerLink]="['/home/auth/login']">Log in</a>
+      </p>
+    </form>
+  </div>
+</div>

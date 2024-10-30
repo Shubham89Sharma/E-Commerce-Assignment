@@ -1,0 +1,52 @@
+<div class="mat-data-table">
+  <div class="ex1 request_table">
+    <table
+      mat-table
+      [dataSource]="dataSource"
+      matSort
+      class="mat-elevation-z8"
+      (matSortChange)="sortData($event)"
+    >
+      <ng-container matColumnDef="image">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header></th>
+        <td mat-cell *matCellDef="let element">
+          <img src="{{ element.images[0] }}" />
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Title</th>
+        <td mat-cell *matCellDef="let element">{{ element.title }}</td>
+      </ng-container>
+      <ng-container matColumnDef="category">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Category</th>
+        <td mat-cell *matCellDef="let element">{{ element.category.name }}</td>
+      </ng-container>
+      <ng-container matColumnDef="price">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.price | currency : "$" }}
+        </td>
+      </ng-container>
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Description</th>
+        <td mat-cell *matCellDef="let element">{{ element.description }}</td>
+      </ng-container>
+      <ng-container matColumnDef="action">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
+        <td mat-cell *matCellDef="let element" (click)="viewDetail(element)">
+          <button mat-flat-button>View Details</button>
+        </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+    <mat-paginator
+      [length]="dataSource.data.length"
+      [pageSize]="obj.limit"
+      (page)="peginator($event)"
+      [pageIndex]="obj.offset"
+      [pageSizeOptions]="[10, 20, 50, 100, 200]"
+    >
+    </mat-paginator>
+  </div>
+</div>
